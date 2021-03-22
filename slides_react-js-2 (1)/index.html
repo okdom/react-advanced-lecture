@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+	<html class="sl-root decks export offline loaded">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>React.js 실습편2</title>
+
+
+		<link rel="stylesheet" type="text/css" href="lib/offline-v2.css">
+
+
+
+	</head>
+	<body class="reveal-viewport theme-font-opensans theme-color-black-blue">
+		<div class="reveal">
+			<div class="slides">
+				<section data-id="8430e13e94f85c0db6494fe9d048123a"><div class="sl-block" data-block-type="text" style="width: 806px; left: 237px; top: 239.5px; height: auto;" data-block-id="0b7b67c9970978c50bc296e62c2c1f5a"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>React.js 실습편2</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-f37fcb" data-block-id="e42fb81c3fc019768d9c421210b02945" style="height: auto; width: 297px; left: 894.5px; top: 609px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<p>ODK Media 김태희</p>
+</div></div></section><section data-id="2d55d4ebecb75c0d268b99c56bc775a3"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 72px; height: auto;" data-block-id="9f4bbee1ca4a6504aeab4c82942b200f"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>오늘 배워볼 것</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-8ecf78" data-block-id="dc72c9991d358feb60a4692b4178109f" style="height: auto; width: 600px; left: 340px; top: 278px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Data fetch하기</li>
+	<li>SPA에 대한 개념 익히기</li>
+	<li>SPA에서 URL 라우팅 처리하기</li>
+</ul>
+</div></div></section><section data-id="7861249fdbe8075db551bb73b1c6a107"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 76px; height: auto;" data-block-id="c47809397354f106372030bd30e2caa1"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>do you know ajax?</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" data-name="image-c8514a" data-block-id="fd712720bf2278bc6c35b0de82e2de3a" style="width: 495.933px; height: 238.048px; left: 392.034px; top: 181.452px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="1200" data-natural-height="576" data-lazy-loaded="" data-src="react-js-2/4d301bcc9380a56375671011c7f69431.png"></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-eafce7" data-block-id="c122043738c7e9043f54cb14c736c1ac" style="height: auto; width: 600px; left: 340px; top: 465px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<p>Asynchronous JavaScript and XML</p>
+</div></div></section><section data-id="cf6ce73eeb1fbd0c7b586c397750e017"><div class="sl-block" data-block-type="image" data-name="image-8f4dab" data-block-id="5cdae9bd471723cc693a3908dbcc80ad" style="width: 218.8px; height: 218.8px; left: 359px; top: 144.6px; min-width: 1px; min-height: 1px;"><div class="sl-block-content fragment" style="z-index: 10;" data-fragment-index="0"><img data-natural-width="225" data-natural-height="225" style="" data-lazy-loaded="" data-src="react-js-2/fad5c4e8083d700695a6b36425e48b86.png"></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-7965aa" data-block-id="2ef2080ecb7b583396b1ac71ed33d44c" style="width: 230.059px; height: 194.4px; left: 506px; top: 363.4px; min-width: 1px; min-height: 1px;"><div class="sl-block-content fragment" style="z-index: 11;" data-fragment-index="1"><img style="" data-natural-width="200" data-natural-height="169" data-lazy-loaded="" data-src="react-js-2/9bba5e0069106e582602a1d6b3b47b0e.png"></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-2eed67" data-block-id="65a4d2ab06f6406ca8e515f09fa2fd16" style="width: 232.8px; height: 232.8px; left: 619.659px; top: 110.6px; min-width: 1px; min-height: 1px;"><div class="sl-block-content fragment" style="z-index: 12;" data-fragment-index="2"><img style="" data-natural-width="256" data-natural-height="256" data-lazy-loaded="" data-src="react-js-2/165bb9af5b191d4e17eae1a89791001f.png"></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-dbdea5" data-block-id="84c31417e2d03a10b0f1aa69a94343da" style="height: auto; width: 600px; left: 340px; top: 609px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;" data-fragment-index="3">
+<p>and many more..</p>
+</div></div></section><section data-id="daaa34d30ea398094d24131270ce59b9"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 41px; height: auto;" data-block-id="20ac85948b39be4d287fc9ad0933c587"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>fetch API</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-e32142" data-block-id="43c526855c85a15b0adb401ace65c384" style="height: auto; width: 600px; left: 340px; top: 249px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<p><a href="https://developer.mozilla.org/ko/docs/Web/API/Fetch_API" target="_blank">https://developer.mozilla.org/ko/docs/Web/API/Fetch_API</a></p>
+</div></div></section><section data-id="8f2b71c2d4e9826f69edbd01cdf24d30"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 11px; height: auto;" data-block-id="8563d5276524d18b53f208831817e4c3"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>React에서 ajax 처리하기</h1>
+</div></div>
+<div class="sl-block" data-block-type="code" data-name="code-95dc31" data-block-id="53c50b5a9fc0820a7537b6fc9b8c4621" style="width: 1046px; height: 465px; left: 117px; top: 255px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;"><pre style="font-size: 16px; line-height: 19px;" class="javascript"><code data-line-numbers="">export default class ProductListPage extends React.Component {
+  // 불러온 데이터를 state에 저장
+  constructor(props) {
+    super(props)
+    
+    this.state = {
+       products: null
+    }
+  }
+  
+  componentDidMount() {
+    fetch(API_URL).then(res =&gt; res.json()).then(products =&gt; this.setState({ products })) 
+  }
+  
+  render() {
+    if (!this.state.products) {
+      return null
+    }
+    
+    // rendering process
+    return this.state.products.map....
+  }
+}</code></pre></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-da3c93" data-block-id="01ef3c832e710e5a4a221c4351ca8640" style="height: auto; width: 600px; left: 340px; top: 177px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<p>class component style</p>
+</div></div></section><section data-id="7bdea029c93d2c5dcd0f5a0f16cb6a45"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 11px; height: auto;" data-block-id="d0fce2a7e218cb3fbb64eed60fc6c53e"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>React에서 ajax 처리하기</h1>
+</div></div>
+<div class="sl-block" data-block-type="code" data-name="code-95dc31" style="width: 1046px; height: 294px; left: 117px; top: 282px;" data-block-id="5d1fd8bc20443046a2d88851ed6db7f0"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;"><pre style="font-size: 16px; line-height: 19px;" class="javascript"><code data-line-numbers="">export default function ProductListPage() {
+  const [products, setProducts] = useState(null)
+  
+  useEffect(() =&gt; {
+    fetch(API_URL).then(res =&gt; res.json()).then(products =&gt; this.setState({ products })) 
+  }, [])
+
+  if (!products) {
+     return null
+  }
+  
+  // rendering process
+  return products.map(.....)
+}</code></pre></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-da3c93" style="height: auto; width: 600px; left: 340px; top: 177px;" data-block-id="443e758d28ae5feef1e6bbea575a497f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<p>function component style</p>
+</div></div></section><section data-id="e995254d157f0945b4f060472db860ea"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 11px; height: auto;" data-block-id="f6911c2ac1b3099fae00bda0ba259925"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>React에서 ajax 처리하기</h1>
+</div></div>
+<div class="sl-block" data-block-type="code" data-name="code-95dc31" style="width: 1046px; height: 465px; left: 117px; top: 255px;" data-block-id="716572a29b58b11c560f5f993b636550"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;"><pre style="font-size: 16px; line-height: 19px;" class="javascript"><code data-line-numbers="">export default class ProductListPage extends React.Component {
+  // 불러온 데이터를 state에 저장
+  constructor(props) {
+    super(props)
+    
+    this.state = {
+       loading: false,
+       products: null,
+       error: null
+    }
+  }
+  
+  componentDidMount() {
+    this.setState({
+      ...this.state,
+      loading: true
+    }, () =&gt; {
+      fetch(API_URL)
+        .then(res =&gt; res.json())
+        .then(products =&gt; this.setState({ products }))
+        .catch(e =&gt; this.setState({ error: e.message }))
+        .finally(() =&gt; this.setState({ ...this.state, loading: false }))
+    })
+    
+  }
+  
+  render() {
+    if (this.state.loading) {
+      return &lt;div&gt;loading...&lt;/div&gt;
+    }
+    
+    if (this.state.error) {
+      return &lt;div&gt;데이터 로딩에 실패했습니다.&lt;/div&gt;
+    }
+    
+    // 서버에서 불러온 데이터 결과가 null이거나 빈 배열일 때
+    if (!this.state.products || this.state.products.length === 0) {
+      return &lt;div&gt;상품이 없습니다.&lt;/div&gt;
+    }
+    
+    // rendering process
+    return this.state.products....
+  }
+}</code></pre></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-da3c93" style="height: auto; width: 600px; left: 340px; top: 177px;" data-block-id="bf0dba7bdcd18364e3af17a691798a24"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<p>class component style</p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-5fda24" data-block-id="1dd9735e2c1ab74b892c29d9eed0f7c7" style="height: auto; width: 600px; left: 340px; top: 124.5px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
+<p>조금 더 정교하게</p>
+</div></div></section><section data-id="40b5e0e0128f0e69cc453e4fd8eb23af"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 11px; height: auto;" data-block-id="4c52131443f8e0a20ae35da0b7b81bda"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>React에서 ajax 처리하기</h1>
+</div></div>
+<div class="sl-block" data-block-type="code" data-name="code-95dc31" style="width: 1046px; height: 465px; left: 117px; top: 255px;" data-block-id="ea9c163833a5fd1b42d0db5faa8cdd99"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;"><pre style="font-size: 16px; line-height: 19px;" class="javascript"><code data-line-numbers="">export default function ProductListPage() {
+  const [products, setProducts] = useState(null)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
+  
+  useEffect(() =&gt; {
+    setLoading(true)
+    fetch(API_URL)
+      .then(res =&gt; res.json())
+      .then(products =&gt; this.setState({ products }))
+      .catch(e =&gt; setError(e.mssage))
+      .finally(() =&gt; setLoading(false))
+  }, [])
+
+    if (loading) {
+      return &lt;div&gt;loading...&lt;/div&gt;
+    }
+    
+    if (error) {
+      return &lt;div&gt;데이터 로딩에 실패했습니다.&lt;/div&gt;
+    }
+    
+    // 서버에서 불러온 데이터 결과가 null이거나 빈 배열일 때
+    if (!products || products.length === 0) {
+      return &lt;div&gt;상품이 없습니다.&lt;/div&gt;
+    }
+    
+    // rendering process
+    return this.state.products....
+}</code></pre></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-da3c93" style="height: auto; width: 600px; left: 340px; top: 177px;" data-block-id="e6c9724835cab7040a1a6c9a6bfbfa3c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<p>function component style</p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-5fda24" style="height: auto; width: 600px; left: 340px; top: 124.5px;" data-block-id="8c2f5311234479ca080bef6c0530fcaf"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
+<p>조금 더 정교하게</p>
+</div></div></section><section data-id="8cb20b2937c08112d2631e03602981a6"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 11px; height: auto;" data-block-id="cf8ab9e3dff0df933602115c83ca0237"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>정리</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-7f5d7d" data-block-id="18b07306753a87663017b203c049e74f" style="height: auto; width: 800px; left: 240px; top: 210px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li class="fragment" data-fragment-index="0">컴포넌트 마운트 시점에 데이터 불러오기</li>
+	<li class="fragment" data-fragment-index="1">불러온 데이터로 state에 넣기</li>
+	<li class="fragment" data-fragment-index="2">데이터가 불려지기 전에는 렌더링하는 로직에서<br>
+	state에 접근하는 것 막기</li>
+	<li class="fragment" data-fragment-index="3">데이터가 로딩 중이거나 로딩 중 에러가 생겼을 때<br>
+	사용자에게 인지 시킬 수 있도록 UI 처리를 하기</li>
+</ul>
+</div></div></section><section data-id="d79437c5b4aced023a65d2d5c4a0fc8a"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 274px; height: auto;" data-block-id="2f4a47a51ce681b738584df650d02b73"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>SPA</h1>
+</div></div></section><section data-id="e804513602a5bf2bc585568d7dc0bf6c"><div class="sl-block" data-block-type="image" data-name="image-2a7120" data-block-id="8ef5155d919291e47d83acd836519a67" style="width: 367.8px; height: 367.8px; left: 226px; top: 112.2px; min-width: 1px; min-height: 1px;"><div class="sl-block-content fragment" style="z-index: 10;" data-fragment-index="0"><img style="" data-natural-width="960" data-natural-height="960" data-lazy-loaded="" data-src="react-js-2/3b479af6c8eb50d5bda03db50c36e8de.png"></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-8ea837" data-block-id="eebce99420c709865c13130f517c9cdb" style="width: 427.065px; height: 327.806px; left: 640px; top: 233.6px; min-width: 1px; min-height: 1px;"><div class="sl-block-content fragment" style="z-index: 11;" data-fragment-index="1"><img style="" data-natural-width="512" data-natural-height="393" data-lazy-loaded="" data-src="react-js-2/90979b9d2d9f2c835de9d0eb5b29691d.png"></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-193f31" data-block-id="c68bfc9d63ea49d435f03ef52ef5858a" style="width: 715.187px; height: 532.8px; left: 282.407px; top: 93.6px; min-width: 1px; min-height: 1px;"><div class="sl-block-content fragment" style="z-index: 12;" data-fragment-index="2"><img style="" data-natural-width="498" data-natural-height="371" data-lazy-loaded="" data-src="react-js-2/911c9ae171abae5359cda07d39414d23.gif"></div></div></section><section data-id="9f1bb7283292440f8dcb463f3edd2346"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 47px; height: auto;" data-block-id="29ea001b664ce78c0fdc0ead1091eae4"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Single Page Application</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-6d38ab" data-block-id="90ec48a890d33a6be53364ded1ef89f7" style="height: auto; width: 991px; left: 160px; top: 209.5px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li class="fragment" data-fragment-index="0">전통적인 웹 페이지처럼 페이지를 이동할 때마다 서버(PHP, JSP, Node.js등)에 요청을 보내 화면을 전부 새로 렌더링 하는 방식이 아닌, 동적으로 변경될 페이지만 다시 그리는 방식</li>
+	<li class="fragment" data-fragment-index="1">화면 전체를 다시 불러올 필요가 없기 때문에 화면 전환 속도가 빠름</li>
+	<li class="fragment" data-fragment-index="2">단순 웹 페이지가 아닌 애플리케이션과 같은 사용성을 가짐</li>
+	<li class="fragment" data-fragment-index="3">화면 새로고침이 일어나지 않기 때문에 연속성이 필요한 화면에서 유용</li>
+	<li class="fragment" data-fragment-index="4">렌더링 로직을 client에 모두 둘 수 있기 때문에 일관된 렌더링 로직을<br>
+	가질 수 있음</li>
+</ul>
+</div></div></section><section data-id="2d1e3ae75481ea0e800128375c99ef07"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 47px; height: auto;" data-block-id="49f62c406a0d8b9134c7d2b0f4a0dd23"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Single Page Application</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-6d38ab" style="height: auto; width: 1018px; left: 160px; top: 249.5px;" data-block-id="68d4fb2d7246bf1bce90d320398b0408"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li class="fragment" data-fragment-index="0">
+<span style="color:rgb(255, 255, 255); text-align:left">애플리케이션 전체에서 사용될 css, js를 모두 불러와야 하기 때문에</span><br>
+	<span style="color:rgb(255, 255, 255); text-align:left">최초 로딩이 느릴 수 있음</span>
+</li>
+	<li class="fragment" data-fragment-index="1">최근에는 각 페이지별로 css, js를 나눠서 동적 로딩하는 방법으로<br>
+	최적화</li>
+	<li class="fragment" data-fragment-index="2">전통적인 방식의 웹 페이지는 화면 이동 시<br>
+	새로고침이 강제되기 때문에 메모리 누수가 되어도 여파가 적으나<br>
+	SPA는 화면을 이동해도 새로고침 되지 않기 때문에 문제가 될 수 있음</li>
+	<li class="fragment" data-fragment-index="3">페이지별로 meta og 관련 처리를 하려면 별도의 조치가 필요
+	<ul>
+		<li>serverless 함수, Server Side Rendering 등</li>
+	</ul>
+	</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-952a72" data-block-id="39b2089dd5b6105bb79cd3282cae80f9" style="height: auto; width: 600px; left: 333px; top: 166.5px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<h3>단점</h3>
+</div></div></section><section data-id="fbe23f1183c7d829c236983b1040e4ac"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 47px; height: auto;" data-block-id="f4bd8422b607fee7106ea88a4dcf54fe"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>url routing 처리하기</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-8fb984" data-block-id="ebffbf046d2ca9876189a27b00d0fa55" style="height: auto; width: 880px; left: 240px; top: 196.5px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li class="fragment" data-fragment-index="0">/ 로 들어온 경우 HomePage 컴포넌트</li>
+	<li class="fragment" data-fragment-index="1">/products로 들어온 경우 ProductsPage 컴포넌트로 렌더링<br>
+	하고 싶다면?</li>
+	<li class="fragment" data-fragment-index="2">기본적으로는, 모든 Page 요청을 App 컴포넌트에 받게하고<br>
+	url을 직접 파싱해서 어떤 컴포넌트를 렌더링 할지 처리</li>
+	<li class="fragment" data-fragment-index="3">url의 변경이 있을 경우, location.href나 a 태그를 이용하면<br>
+	화면이 새로고침 되기 때문에 이벤트를 가로채서 history api 혹은 hash를 사용해 url update</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="image" data-name="image-698fdc" data-block-id="6ce781b063e6c4cf6d3ae1111b695d73" style="width: 319.664px; height: 375.4px; left: 480px; top: 200.6px; min-width: 1px; min-height: 1px;"><div class="sl-block-content fragment" style="z-index: 12;" data-fragment-index="4"><img style="" data-natural-width="195" data-natural-height="229" data-lazy-loaded="" data-src="react-js-2/7cc793bdd53409c7fe75705ae01321e6.gif"></div></div></section><section data-id="6f5c136b6beb08987836fca474e4f9c1"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 47px; height: auto;" data-block-id="cd05903696cd78d82e7a5b86a80945bb"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>react-router</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" data-name="image-ea17f8" data-block-id="22db92e9bd8c10112d2df17f88233a0d" style="width: 407.512px; height: 222.684px; left: 436.244px; top: 158.6px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="366" data-natural-height="200" data-lazy-loaded="" data-src="react-js-2/ead14723f1275e3ffdf8e7fcb2483643.png"></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-c9b863" data-block-id="aff02aec5cae5df79f3e9427eb6dc930" style="height: auto; width: 600px; left: 340px; top: 484.5px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<p><a href="https://reactrouter.com/" target="_blank">https://reactrouter.com/</a></p>
+</div></div></section><section data-id="b6ec18af96327bfccef150bfbbc913c7"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 47px; height: auto;" data-block-id="7468dc076386fb1f046df9e65557575b"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>기존 react project에 설치하기</h1>
+</div></div>
+<div class="sl-block" data-block-type="code" data-name="code-e0ee09" data-block-id="c1084f61cd41f5500cafe2bb540304de" style="width: 390px; height: 50px; left: 445px; top: 360px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;"><pre style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">npm install --save react-router-dom</code></pre></div></div></section><section data-id="46ef2cdc1c52d4810fbe4ab7789210be"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 47px; height: auto;" data-block-id="8746f7cb6b64a24dc3cb63a21e9cb52e"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>컴포넌트 최상위를 Router로 감싸기</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" data-name="code-d2b976" data-block-id="a62c2fa8e963daaffffa8cb76fac083f" style="width: 662px; height: 300px; left: 309px; top: 288px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;"><pre style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">import React from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
+
+export default function App() {
+  return (
+    &lt;Router&gt;
+      ...
+    &lt;/Router&gt;
+  )
+}</code></pre></div></div></section><section data-id="e710d220de8d8db933d9ce05344d09f4"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 47px; height: auto;" data-block-id="c66f10c95abbe2736197d402ba57f62f"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>url에 따라 분기할 곳에 Switch로 감싸기</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" data-name="code-d2b976" style="width: 662px; height: 300px; left: 309px; top: 288px;" data-block-id="46dd88ae2d2ab14c3641de1e716a3f53"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;"><pre style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">import React from 'react'
+import { BrowserRouter as Router, Switch } from 'react-router-dom'
+
+export default function App() {
+  return (
+    &lt;Router&gt;
+      &lt;Switch&gt;
+        ...
+      &lt;/Switch&gt;
+      ...
+    &lt;/Router&gt;
+  )
+}</code></pre></div></div></section><section data-id="31016bcb7d67bf62074bf8c30c5a4bb0"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 47px; height: auto;" data-block-id="2bb51d0e5aa0484f2f4322df2f9430f6"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Switch 안에 url에 따라 렌더링할 조건을<br>
+Route로 지정하기</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" data-name="code-d2b976" style="width: 882px; height: 432px; left: 199px; top: 251px;" data-block-id="adf8bd358fa85a4aa2e60ed17300d538"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;"><pre style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+
+import HomePage from './HomePage'
+import ProductsPage from './ProductsPage'
+
+export default function App() {
+  return (
+    &lt;Router&gt;
+      &lt;Switch&gt;
+        &lt;Route path="/" exact&gt;
+          &lt;HomePage /&gt;
+        &lt;/Route&gt;        
+        &lt;Route path="/products"&gt;
+          &lt;ProductsPage /&gt;
+        &lt;/Route&gt;
+      &lt;/Switch&gt;
+      ...
+    &lt;/Router&gt;
+  )
+}</code></pre></div></div>
+<div class="sl-block" data-block-type="shape" data-name="shape-d7f563" data-block-id="7122a3a22864d74e145b3885a27fe709" style="width: 97px; height: 66px; left: 449px; top: 418.5px;"><div class="sl-block-content" data-shape-type="circle" data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true" style="z-index: 12;" data-shape-stroke-color="#000000" data-shape-stroke-width="2px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 97 66"><defs><clippath id="shape-mask-3-1616355816201"><ellipse rx="48.5" ry="33" cx="48.5" cy="33" fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="4"></ellipse></clippath></defs><ellipse rx="48.5" ry="33" cx="48.5" cy="33" class="shape-element" fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="4" clip-path="url(#shape-mask-3-1616355816201)"></ellipse></svg></div></div>
+<div class="sl-block" data-block-type="line" data-name="line-590c3c" data-block-id="d0d857dbc2750895383fd53343e8548e" style="width: auto; height: auto; min-width: 0px; min-height: 0px; left: 546px; top: 451px;"><div class="sl-block-content" data-line-x1="0" data-line-y1="0" data-line-x2="206" data-line-y2="33" data-line-color="#000000" data-line-start-type="none" data-line-end-type="none" style="z-index: 13;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="206" height="33" viewbox="0 0 206 33"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="0" y1="0" x2="206" y2="33"></line><line class="line-element" stroke="#000000" stroke-width="2" x1="0" y1="0" x2="206" y2="33"></line></svg></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-198549" data-block-id="79e794c41e66f0c875b175ba1f4d3676" style="height: auto; width: 453px; left: 752px; top: 457.5px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
+<p>안 붙이면 /로 시작하는 모든 url을<br>
+이 친구가 처리함</p>
+</div></div></section><section data-id="4ee681ccc56adf5b4d21f916bef9f7af"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 47px; height: auto;" data-block-id="567f3831902e3b56672deaaa244855cf"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>페이지 이동 링크는 Link로 처리하기</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" data-name="code-d2b976" style="width: 882px; height: 576px; left: 199px; top: 129px;" data-block-id="79c2e98a3448e333144c2086a99370e3"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;"><pre style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">import React from 'react'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+
+import HomePage from './HomePage'
+import ProductsPage from './ProductsPage'
+
+export default function App() {
+  return (
+    &lt;Router&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;Link to="/"&gt;Home&lt;/Link&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;Link to="/products"&gt;Products&lt;/Link&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;Switch&gt;
+        &lt;Route path="/" exact&gt;
+          &lt;HomePage /&gt;
+        &lt;/Route&gt;        
+        &lt;Route path="/products"&gt;
+          &lt;ProductsPage /&gt;
+        &lt;/Route&gt;
+      &lt;/Switch&gt;
+      ...
+    &lt;/Router&gt;
+  )
+}</code></pre></div></div>
+<div class="sl-block" data-block-type="shape" data-name="shape-ba981b" data-block-id="010783f2b64f8cde2de3c4ad23808fdf" style="width: 150px; height: 64px; left: 376px; top: 317px;"><div class="sl-block-content" data-shape-type="circle" data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true" style="z-index: 12;" data-shape-stroke-color="#000000" data-shape-stroke-width="2px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 150 64"><defs><clippath id="shape-mask-1-1616355393941"><ellipse rx="75" ry="32" cx="75" cy="32" fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="4"></ellipse></clippath></defs><ellipse rx="75" ry="32" cx="75" cy="32" class="shape-element" fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="4" clip-path="url(#shape-mask-1-1616355393941)"></ellipse></svg></div></div>
+<div class="sl-block" data-block-type="line" data-name="line-b1676d" data-block-id="f6e706d82573b02d333b854d0b872923" style="width: auto; height: auto; min-width: 0px; min-height: 0px; left: 400px; top: 373px;"><div class="sl-block-content" data-line-x1="32" data-line-y1="101" data-line-x2="0" data-line-y2="0" data-line-color="#000000" data-line-start-type="line-arrow" data-line-end-type="none" style="z-index: 13;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="32" height="101" viewbox="0 0 32 101"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="31.39593065192575" y1="99.09340612014064" x2="0" y2="0"></line><line class="line-element" stroke="#000000" stroke-width="2" x1="31.39593065192575" y1="99.09340612014064" x2="0" y2="0"></line><path style="fill: rgba(0,0,0,0);" stroke="#000000" stroke-width="2" transform="translate(31.39593065192575,99.09340612014064) rotate(-17.58)" d="M -6 -6 L 0 0 L 6 -6"></path></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 150px; height: 64px; left: 410px; top: 373px;" data-block-id="a544b7471322486a199b2a1056fa44b0" data-name="shape-fb3c8d"><div class="sl-block-content" data-shape-type="circle" data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true" style="z-index: 14;" data-shape-stroke-color="#000000" data-shape-stroke-width="2px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 150 64"><defs><clippath id="shape-mask-2-1616355418044"><ellipse rx="75" ry="32" cx="75" cy="32" fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="4"></ellipse></clippath></defs><ellipse rx="75" ry="32" cx="75" cy="32" class="shape-element" fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="4" clip-path="url(#shape-mask-2-1616355418044)"></ellipse></svg></div></div>
+<div class="sl-block" data-block-type="line" data-name="line-47712b" data-block-id="7e0a24426d53b3301adf7878ccbd4c79" style="width: auto; height: auto; min-width: 0px; min-height: 0px; left: 504px; top: 432px;"><div class="sl-block-content" data-line-x1="7" data-line-y1="93" data-line-x2="0" data-line-y2="0" data-line-color="#000000" data-line-start-type="line-arrow" data-line-end-type="none" style="z-index: 15;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="7" height="93" viewbox="0 0 7 93"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="6.849886989761972" y1="91.00564143540905" x2="0" y2="0"></line><line class="line-element" stroke="#000000" stroke-width="2" x1="6.849886989761972" y1="91.00564143540905" x2="0" y2="0"></line><path style="fill: rgba(0,0,0,0);" stroke="#000000" stroke-width="2" transform="translate(6.849886989761972,91.00564143540905) rotate(-4.304)" d="M -6 -6 L 0 0 L 6 -6"></path></svg></div></div></section><section data-id="05d86ac0ea304bdf597b84ad546195ad"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 47px; height: auto;" data-block-id="ff494ef3663c335c000ec3cee49e8859"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>path variable 처리하기</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" data-name="code-d2b976" style="width: 882px; height: 591px; left: 199px; top: 129px;" data-block-id="7a94fd2af724b124c669735b70524ff1"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;"><pre style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">import React from 'react'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+
+import HomePage from './HomePage'
+import ProductsPage from './ProductsPage'
+import ProductDetailPage from './ProductDetailPage'
+
+export default function App() {
+  return (
+    &lt;Router&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;Link to="/"&gt;Home&lt;/Link&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;Link to="/products"&gt;Products&lt;/Link&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;Switch&gt;
+        &lt;Route path="/" exact&gt;
+          &lt;HomePage /&gt;
+        &lt;/Route&gt;        
+        &lt;Route path="/products" exact&gt;
+          &lt;ProductsPage /&gt;
+        &lt;/Route&gt;
+        &lt;Route path="/products/:productId"&gt;
+          &lt;ProductDetailPage /&gt;
+        &lt;/Route&gt;
+      &lt;/Switch&gt;
+    &lt;/Router&gt;
+  )
+}</code></pre></div></div>
+<div class="sl-block" data-block-type="shape" data-name="shape-d7f563" style="width: 97px; height: 66px; left: 527px; top: 523.5px;" data-block-id="b61dc580de6bd0b0a036b144c7709cb6"><div class="sl-block-content" data-shape-type="circle" data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true" style="z-index: 12;" data-shape-stroke-color="#000000" data-shape-stroke-width="2px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 97 66"><defs><clippath id="shape-mask-6-1616356034065"><ellipse rx="48.5" ry="33" cx="48.5" cy="33" fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="4"></ellipse></clippath></defs><ellipse rx="48.5" ry="33" cx="48.5" cy="33" class="shape-element" fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="4" clip-path="url(#shape-mask-6-1616356034065)"></ellipse></svg></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-198549" style="height: auto; width: 453px; left: 747px; top: 517.5px;" data-block-id="ed434dec2f330c4e2f24e2276ce81825"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
+<p>안 붙이면 /products로<br>
+시작하는 모든 url을<br>
+이 친구가 처리함</p>
+</div></div>
+<div class="sl-block" data-block-type="line" data-name="line-9d1fa8" data-block-id="15f4db9c3f3acca8c11949c6887f7eab" style="width: auto; height: auto; min-width: 0px; min-height: 0px; left: 632px; top: 562px;"><div class="sl-block-content" data-line-x1="0" data-line-y1="0" data-line-x2="193" data-line-y2="14" data-line-color="#000000" data-line-start-type="line-arrow" data-line-end-type="none" style="z-index: 14;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="193" height="14" viewbox="0 0 193 14"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="1.9947587887219855" y1="0.14469752871558444" x2="193" y2="14"></line><line class="line-element" stroke="#000000" stroke-width="2" x1="1.9947587887219855" y1="0.14469752871558444" x2="193" y2="14"></line><path style="fill: rgba(0,0,0,0);" stroke="#000000" stroke-width="2" transform="translate(1.9947587887219855,0.14469752871558444) rotate(94.149)" d="M -6 -6 L 0 0 L 6 -6"></path></svg></div></div></section><section data-id="b244d98171079c7388a863ca78efaccf"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 45px; height: auto;" data-block-id="940cf2a0c8303d475aea755b2aef7e63"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>path variable 처리하기</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" data-name="code-d2b976" style="width: 882px; height: 494px; left: 214px; top: 194px;" data-block-id="e3da1778eda8aa565c730c02d9712cbc"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;"><pre style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">import React from "react";
+import { withRouter } from "react-router";
+
+class ProductDetailPage extends React.Component {
+  render() {
+    return (
+      &lt;div&gt;상품 아이디: {this.props.match.params.productId}&lt;/div&gt;
+    )
+  }
+}
+
+export default withRouter(ProductDetailPage)</code></pre></div></div>
+<div class="sl-block" data-block-type="shape" data-name="shape-d7f563" style="width: 121px; height: 66px; left: 386px; top: 392px;" data-block-id="558859860a742964abf904f8fb0578c4"><div class="sl-block-content" data-shape-type="circle" data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true" style="z-index: 12;" data-shape-stroke-color="#000000" data-shape-stroke-width="2px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 121 66"><defs><clippath id="shape-mask-7-1616356066660"><ellipse rx="60.5" ry="33" cx="60.5" cy="33" fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="4"></ellipse></clippath></defs><ellipse rx="60.5" ry="33" cx="60.5" cy="33" class="shape-element" fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="4" clip-path="url(#shape-mask-7-1616356066660)"></ellipse></svg></div></div>
+<div class="sl-block" data-block-type="line" data-name="line-9d1fa8" style="width: auto; height: auto; left: 472px; top: 458px;" data-block-id="cde51f38f4f8b4701500c01cf5b19be2"><div class="sl-block-content" data-line-x1="0" data-line-y1="0" data-line-x2="62" data-line-y2="91" data-line-color="#000000" data-line-start-type="line-arrow" data-line-end-type="none" style="z-index: 13;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="62" height="91" viewbox="0 0 62 91"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="1.1261099907825196" y1="1.6528388574388593" x2="62" y2="91"></line><line class="line-element" stroke="#000000" stroke-width="2" x1="1.1261099907825196" y1="1.6528388574388593" x2="62" y2="91"></line><path style="fill: rgba(0,0,0,0);" stroke="#000000" stroke-width="2" transform="translate(1.1261099907825196,1.6528388574388593) rotate(145.733)" d="M -6 -6 L 0 0 L 6 -6"></path></svg></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-46e2ba" data-block-id="94fe09d66c37ab8af410ecd5736c4cd7" style="height: auto; width: 600px; left: 435px; top: 542.5px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
+<p>컴포넌트를 withRouter로 감싸면<br>
+pros.match.params에<br>
+url 파라메터들이 들어있음</p>
+</div></div>
+<div class="sl-block" data-block-type="shape" style="width: 121px; height: 66px; left: 214px; top: 240px;" data-block-id="760a6853fa3ff637bd4540861b38b95f" data-name="shape-810fc8"><div class="sl-block-content" data-shape-type="circle" data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true" style="z-index: 15;" data-shape-stroke-color="#000000" data-shape-stroke-width="2px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 121 66"><defs><clippath id="shape-mask-8-1616356336277"><ellipse rx="60.5" ry="33" cx="60.5" cy="33" fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="4"></ellipse></clippath></defs><ellipse rx="60.5" ry="33" cx="60.5" cy="33" class="shape-element" fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="4" clip-path="url(#shape-mask-8-1616356336277)"></ellipse></svg></div></div>
+<div class="sl-block" data-block-type="line" style="width: auto; height: auto; left: 137px; top: 281px;" data-block-id="a8fa2a57706b522be73baca98a9a5575" data-name="line-d0b912"><div class="sl-block-content" data-line-x1="77" data-line-y1="0" data-line-x2="0" data-line-y2="168" data-line-color="#ffffff" data-line-start-type="line-arrow" data-line-end-type="none" style="z-index: 16;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="77" height="168" viewbox="0 0 77 168"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="76.16669057901358" y1="1.8181296457885683" x2="0" y2="168"></line><line class="line-element" stroke="#ffffff" stroke-width="2" x1="76.16669057901358" y1="1.8181296457885683" x2="0" y2="168"></line><path style="fill: rgba(0,0,0,0);" stroke="#ffffff" stroke-width="2" transform="translate(76.16669057901358,1.8181296457885683) rotate(204.624)" d="M -6 -6 L 0 0 L 6 -6"></path></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 288px; left: 24px; top: 458px;" data-block-id="058991abba7e2ae9c939bf69e8ae1cdc" data-name="text-39411f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17;">
+<p>바로 export default<br>
+하지 않는 것에 주의</p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-e27ee5" data-block-id="8dbb869aefb99a770afd3387a451736c" style="height: auto; width: 600px; left: 340px; top: 124.5px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 18;">
+<p>class component style</p>
+</div></div></section><section data-id="7dc6cc6547634ec39108ebb0981889fa"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 45px; height: auto;" data-block-id="c6a09b1195a99e205f3f466f1a500116"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>path variable 처리하기</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" data-name="code-d2b976" style="width: 882px; height: 494px; left: 214px; top: 194px;" data-block-id="acce5a418c34a449fd313b00f32b434e"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;"><pre style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">
+import React from "react";
+import { useParams } from "react-router";
+
+export default function ProductDetailPage () {
+  const { productId } = useParams()
+
+  return (
+    &lt;div&gt;상품 아이디: {productId}&lt;/div&gt;
+
+  )
+}</code></pre></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-e27ee5" style="height: auto; width: 600px; left: 340px; top: 124.5px;" data-block-id="93d1b4ad03f91f8dd45b01f6d147594d"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 18;">
+<p>function style component</p>
+</div></div></section><section data-id="b68658de1b8bbe79926abb31e5a4a978"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 274px; height: auto;" data-block-id="7a6f09417c11191e886a9eb8e3926d29"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>오늘의 실습</h1>
+</div></div></section><section data-id="6a53de826a434c9221fcc8e48c513c66"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 47px; height: auto;" data-block-id="57c909b1dbf86029463661923d961e00"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>실습 준비하기</h1>
+</div></div>
+<div class="sl-block" data-block-type="code" data-name="code-3eb514" data-block-id="5393bc74f6c12bc118d8d30067b393eb" style="width: 384px; height: 103px; left: 448px; top: 185px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;"><pre style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">npx create-react-app sample2
+
+npm install --save react-router-dom</code></pre></div></div></section><section data-id="cd1c1f4a24161bb23c5cd3bec05139c0"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 23.5px; height: auto;" data-block-id="1c1f4f4d75db0b55063454faaa30ae8c"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>상품 목록 / 상세 페이지 만들기</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-7f4129" data-block-id="8660ae74ea409ccc57d42b51246067a2" style="height: auto; width: 960px; left: 183px; top: 171px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li class="fragment" data-fragment-index="0">react-router-dom을 이용해 상품 목록, 상품 상세 페이지를 SPA<br>
+	형태로 볼 수 있도록 만듭니다.
+	<ul>
+		<li class="fragment" data-fragment-index="0">상품 목록 url: /</li>
+	</ul>
+	</li>
+	<li class="fragment" data-fragment-index="1">상품 목록에서 상품을 클릭하면, 상품 상세 화면으로 이동합니다.
+	<ul>
+		<li class="fragment" data-fragment-index="1">상품 상세 url: /products/:productId</li>
+	</ul>
+	</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-bad1c5" data-block-id="1e6d321acce0b87768e9fe2ebf14deaa" style="height: auto; width: 880px; left: 240px; top: 403.5px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li class="fragment" data-fragment-index="2">react-router-dom 설치를 잊지 마세요.</li>
+	<li class="fragment" data-fragment-index="3">App 컴포넌트 렌더링 할 때 BrowserRouter 컴포넌트로 한번 감싸는 것도 잊지 마세요.</li>
+	<li class="fragment" data-fragment-index="4">class component 사용시, withRouter를 이용해야 url 파라메터를 불러올 수 있습니다.</li>
+	<li class="fragment" data-fragment-index="5">function component 사용시엔 useParams hook를 이용하여 불러올 수 있습니다.</li>
+</ul>
+</div></div></section><section data-id="f763c1b4440e25a3254c712e1f91c02f"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 23.5px; height: auto;" data-block-id="0c95100d162ec06f88cf998038dec262"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>상품 목록 / 상세 페이지 만들기</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-7f4129" style="height: auto; width: 960px; left: 240px; top: 177px;" data-block-id="9511e5c9dd1c665650499d1a40b2cc43"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>상품 목록을 불러오는 API와 상품 페이지를 불러오는<br>
+	API를 이용합니다.
+	<ul>
+		<li>상품 목록 API: <a href="https://lgcns-react.roto.codes/products" target="_blank">https://lgcns-react.roto.codes/products</a>
+</li>
+		<li>상품 상세 API: https://lgcns-react.roto.codes/products/:productId<br>
+		<br>
+		ex) <a href="https://lgcns-react.roto.codes/products/1" target="_blank">https://lgcns-react.roto.codes/products/1</a><br>
+		       id가 1인 상품 데이터 불러오기</li>
+	</ul>
+	</li>
+	<li>상품 데이터를 불러오는 것은 fetch() api를 이용합니다.</li>
+</ul>
+</div></div></section><section data-id="79debfa8d1173c1335b523341081fb77"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 23.5px; height: auto;" data-block-id="1b60362c32f0702240578bd5b6c60dfa"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>css</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-7f4129" style="height: auto; width: 960px; left: 160px; top: 183px;" data-block-id="853b822f329a8f6e7575e5c0ed9803fc"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>아래 내용의 css를 복사해서, App.css 로 저장하세요.</li>
+</ul>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<ul>
+	<li>App.js에서 위의 css를 import하세요.</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-name="code-e9fe51" data-block-id="701d85608fe5f22c326904243bbe0880" style="width: 800px; height: 300px; left: 240px; top: 239px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;"><pre class="css" style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">* {
+  box-sizing: border-box;
+}
+
+.ProductsPage {
+  max-width: 1024px;
+  padding: 40px;
+  display: flex;
+  width: 300px;
+  height: 400px;
+  flex-direction: row;
+}
+
+.ProductsPage &gt; div {
+  margin-right: 15px;
+}
+
+.ProductsPage img {
+  width: 300px;
+  height: 300px;
+}
+
+.ProductDetailPage {
+  display: flex;
+  flex-direction: row;
+  padding: 40px;
+}
+
+.ProductDetailPage img {
+  width: 400px;
+  height: 400px;
+  margin-right: 30px;
+}
+
+.ProductDetailPage .content {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}</code></pre></div></div></section><section data-id="5c71244bb034615b20ae2d6c4337ad41"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 23.5px; height: auto;" data-block-id="8fd4c5c432b609f105cde707d92e3f12"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>상품 목록</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-7f4129" style="height: auto; width: 960px; left: 160px; top: 184px;" data-block-id="45140c6bcd8f496422ff7a317b430d39"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>상품목록 페이지 최상단 div에 ProductsPage className을<br>
+	넣습니다.</li>
+	<li>아래의 마크업을 참고합니다.
+	<ul>
+		<li>이미지 주소는 다음과 같이 만듭니다.<br>
+		https://lgcns-react.roto.codes + product.image.url</li>
+	</ul>
+	</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-name="code-1584ca" data-block-id="b57c87651a3e17c9b86281d6d6d6c553" style="width: 855px; height: 182px; left: 212.5px; top: 407px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;"><pre class="javascript" style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">&lt;div className="ProductsPage"&gt;
+  // products 배열에 따라 반복될 부분
+  &lt;div&gt;
+    &lt;img src={`https://lgcns-react.roto.codes${product.image.url}`} /&gt;
+    {product.name}
+  &lt;/div&gt;      
+&lt;/div&gt;</code></pre></div></div></section><section data-id="fa16ff6a79f2dee9b2ff185ff092aa31"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 23.5px; height: auto;" data-block-id="445b9fe04cf286d1efc23ab049eeaaa6"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>상품 상세</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-7f4129" style="height: auto; width: 960px; left: 160px; top: 184px;" data-block-id="6e50c04bb28136fe058d25345a157c70"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>상품목록 페이지 최상단 div에 ProductDetailPage className을<br>
+	넣습니다.</li>
+	<li>아래의 마크업을 참고합니다.
+	<ul>
+		<li>이미지 주소는 다음과 같이 만듭니다.<br>
+		https://lgcns-react.roto.codes + product.image.url</li>
+	</ul>
+	</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-name="code-1584ca" style="width: 855px; height: 294px; left: 212.5px; top: 404px;" data-block-id="5a5fd11685a3eefee52f84bf832a2f93"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;"><pre class="javascript" style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">&lt;div className="ProductDetailPage"&gt;
+  &lt;img src={`https://lgcns-react.roto.codes${product.image.url}`} /&gt;
+
+  &lt;div className="content"&gt;
+    &lt;div&gt;{product.name}&lt;/div&gt;
+    &lt;div&gt;{product.description}&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></div></div></section><section data-id="54578c6dec505e1c1306562913f3cc4d"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 23.5px; height: auto;" data-block-id="735fb80b69cba1342ac05f6cacb13143"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Tip</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-2ed587" data-block-id="abc25fc3809a424f1dc4360d732bbc1a" style="height: auto; width: 960px; left: 160px; top: 243px;"><div class="sl-block-style" style="z-index: 11; transform: rotate(0deg);"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>API를 처음부터 연동하지 마시고, API 응답 결과를 별도의 변수에<br>
+	하드코딩해서 먼저 해당 변수에 들은 데이터를 화면에 그리는 코드를 먼저 작성하세요.</li>
+	<li>렌더링 처리가 끝나면, 하드코딩해둔 데이터를 지우고 이때 API에서<br>
+	데이터를 불러와 연동하는 것을 처리합니다.</li>
+</ul>
+</div></div></div></section><section data-id="687c965165333820ed72c2d46d8e9e5a"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 274px; height: auto;" data-block-id="5731b68a51f14fcca50287cca0c22bbd"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>실습 시간</h1>
+</div></div></section><section data-id="f43e3035dbeabd55a3246e01d2755d40"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 274px; height: auto;" data-block-id="46e49c69a5e698d9c5e93865a078d28d"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Live coding</h1>
+</div></div></section><section data-id="b7d52ea90f99cf30cf7cb0c42fdcd065"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 274px; height: auto;" data-block-id="fb15bdd20190325c013926d1f87b2f88"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Q&amp;A</h1>
+</div></div></section><section data-id="06ac516a91053042ac77fc5a8bb4c240"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 273px; height: auto;" data-block-id="29135ab02f31af3a933c6f91ca560abd"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>감사합니다!</h1>
+</div></div></section>
+			</div>
+		</div>
+
+		<script>
+			var SLConfig = {"deck": {"id":2077281,"slug":"react-js-2","title":"React.js 실습편2","description":"","width":1280,"height":720,"margin":0.05,"visibility":"self","published_at":"2021-03-14T20:12:04.842Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/de297fdb66ec1efbddfdc9a54cf0e0cd/thumb.jpg?1616349102","view_count":0,"user":{"id":53778,"username":"rotoshine","name":"TaeHee Kim","description":"Software Engineer / Bassist","thumbnail_url":"https://media.slid.es/avatars/53778/me-crop.jpg","account_type":"lite","team_id":null,"settings":{"id":13546,"present_controls":true,"present_upsizing":true,"present_pointer":true,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"slide","transition":"slide","theme_id":null,"theme_font":"opensans","theme_color":"black-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"shuffle":false,"should_loop":false,"share_notes":false,"slide_number":true,"slide_count":36,"rtl":false,"version":2,"collaborative":false,"deck_user_editor_limit":1,"data_updated_at":1616392403110,"font_typekit":null,"font_google":null,"time_limit":null,"navigation_mode":"default","upsizing_enabled":true,"notes":{}}};
+
+
+			// Use local fonts
+			SLConfig.fonts_url = 'lib/fonts/';
+		</script>
+
+		<script src="lib/reveal.js"></script>
+		<script src="lib/reveal-plugins.js"></script>
+		<script src="lib/offline.js"></script>
+
+		<!-- Initialize the presentation -->
+		<script>
+			Reveal.initialize({
+				width: 1280,
+				height: 720,
+				margin: 0.05,
+				
+
+				hash: true,
+				controls: true,
+				progress: true,
+				mouseWheel: false,
+				showNotes: false,
+				slideNumber: true,
+				fragmentInURL: true,
+
+				autoSlide: 0,
+				autoSlideStoppable: true,
+
+				autoAnimateMatcher: SL.deck.AutoAnimate.matcher,
+
+				center: false,
+				shuffle: false,
+				loop: false,
+				rtl: false,
+				navigationMode: "default",
+
+				transition: "slide",
+				backgroundTransition: "slide",
+
+				highlight: {
+					escapeHTML: false
+				},
+
+				plugins: [ RevealZoom, RevealNotes, RevealMarkdown, RevealHighlight ]
+			});
+		</script>
+
+		
+
+	</body>
+</html>
